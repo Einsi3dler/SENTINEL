@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+
+"""
+Depreciated Method of File Storage [Perphaps combine with some sort of system to make a backup system?]
+"""
 """
 Contains the FileStorage class
 """
+'''
 
 import json
 import models
@@ -14,8 +19,7 @@ from models.state import State
 from models.user import User
 from hashlib import md5
 
-classes = {"Amenity": Amenity, "BaseModel": BaseModel, "City": City,
-           "Place": Place, "Review": Review, "State": State, "User": User}
+classes = {"Amenity": Amenity, "BaseModel": BaseModel, "User": User}
 
 
 class FileStorage:
@@ -102,3 +106,5 @@ class FileStorage:
             count = len(models.storage.all(cls).values())
 
         return count
+
+'''
