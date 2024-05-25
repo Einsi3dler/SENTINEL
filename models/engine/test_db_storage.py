@@ -14,7 +14,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 classes = db_models.get_dict()
 
 
-class DBStorage:
+class Test_DBStorage:
     """interaacts with the MySQL database"""
     __engine = None
     __session = None
@@ -22,7 +22,7 @@ class DBStorage:
 
     def __init__(self):
 
-        with open('/home/xzy/Sentinel/models/engine/pass.json', 'r') as file:
+        with open('/home/xzy/Sentinel/models/engine/testpass.json', 'r') as file:
             dictionary = json.load(file)
         
         """Instantiate a DBStorage object"""
@@ -103,31 +103,3 @@ class DBStorage:
             count = len(models.storage.all(cls).values())
 
         return count
-    
-    def switch_database(self, arg):
-        """Switch to a new database."""
-        if arg == "test_db":
-            filelink = '/home/xzy/Sentinel/models/engine/testpass.json'
-        elif arg == "prod_db":
-            filelink = '/home/xzy/Sentinel/models/engine/pass.json'
-        else:
-            print("NOPE!")
-            return
-        with open(filelink, 'r') as file:
-            dictionary = json.load(file)
-        self.__engine.dispose()
-        """Instantiate a DBStorage object"""
-        HBNB_MYSQL_USER = dictionary["HBNB_MYSQL_USER"]
-        HBNB_MYSQL_PWD = dictionary["HBNB_MYSQL_PWD"]
-        HBNB_MYSQL_HOST = dictionary["HBNB_MYSQL_HOST"]
-        HBNB_MYSQL_DB = dictionary["HBNB_MYSQL_DB"]
-        HBNB_ENV = getenv('HBNB_ENV')
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
-                                      format(HBNB_MYSQL_USER,
-                                             HBNB_MYSQL_PWD,
-                                             HBNB_MYSQL_HOST,
-                                             HBNB_MYSQL_DB))
-        Base.metadata.bind = self.__engine
-        self.reload()
-        print(f"Switched to new database")
-    
