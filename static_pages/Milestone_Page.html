@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone Page</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .milestone-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .milestone {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .milestone:hover {
+            background-color: #f0f0f0;
+        }
+        .add-button, .save-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .add-button {
+            background-color: #007bff;
+            color: white;
+        }
+        .add-button:hover {
+            background-color: #0056b3;
+        }
+        .save-button {
+            background-color: #28a745;
+            color: white;
+            align-self: center;
+        }
+        .save-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Define Escrow Terms</div>
+        <div class="milestone-group" id="milestone-group">
+            <div class="milestone" onclick="openDialog(this)">Milestone, Amount, Action</div>
+            <div class="milestone" onclick="openDialog(this)">Milestone, Amount, Action</div>
+        </div>
+        <button class="add-button" onclick="addMilestone()">Add more Milestones</button>
+        <button class="save-button">Save</button>
+    </div>
+
+    <!-- Dialog for adding/editing milestone -->
+    <div id="milestone-dialog" style="display: none;">
+        <!-- Content for the dialog will go here -->
+    </div>
+
+    <script>
+        function addMilestone() {
+            const milestoneGroup = document.getElementById('milestone-group');
+            const milestones = milestoneGroup.getElementsByClassName('milestone');
+            if (milestones.length < 6) {
+                const newMilestone = document.createElement('div');
+                newMilestone.className = 'milestone';
+                newMilestone.textContent = 'Milestone, Amount, Action';
+                newMilestone.onclick = () => openDialog(newMilestone);
+                milestoneGroup.appendChild(newMilestone);
+            } else {
+                alert('You can only add up to 6 milestones.');
+            }
+        }
+
+        function openDialog(milestoneElement) {
+            // Open the dialog for editing milestone details
+            const dialogUrl = "milestone_detail.html";
+            window.location.href = dialogUrl;
+        }
+    </script>
+</body>
+</html>

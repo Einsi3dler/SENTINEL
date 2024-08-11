@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbitration Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #d0e7f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .left-section, .right-section {
+            flex: 1;
+            padding: 20px;
+        }
+        .left-section {
+            border-right: 2px solid #ccc;
+        }
+        .instruction-box {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .conclusion-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .buttons button {
+            flex: 1;
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buttons .yes-button {
+            background-color: green;
+            color: white;
+        }
+        .buttons .no-button {
+            background-color: red;
+            color: white;
+        }
+        .milestones {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .milestone {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+        .milestone::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            width: 2px;
+            height: 20px;
+            background-color: #007bff;
+        }
+        .milestone:last-child::after {
+            display: none;
+        }
+        .description-area {
+            margin-top: 20px;
+        }
+        .description-area textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        .submit-button {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="instruction-box">
+                Take some time to communicate with the sender/receiver and reach a conclusion in given time.
+            </div>
+            <div class="conclusion-title">Did you reach a conclusion?</div>
+            <div class="buttons">
+                <button class="yes-button">Yes</button>
+                <button class="no-button">No</button>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="milestones">
+                <div class="milestone">Arbitration Initiated</div>
+                <div class="milestone">Timer complete</div>
+                <div class="milestone">Users are given an hour to reach a conclusion</div>
+                <div class="milestone">Please Describe Other User Behavior and why escrow was not successful</div>
+            </div>
+            <div class="description-area">
+                <textarea placeholder="Describe other user behavior and why escrow was not successful"></textarea>
+            </div>
+            <button class="submit-button">Submit</button>
+        </div>
+    </div>
+</body>
+</html>

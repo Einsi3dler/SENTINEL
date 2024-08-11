@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escrow Page Flow</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #d0e7f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 20px 1fr;
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+        }
+        .separator {
+            background: linear-gradient(to bottom, #d0e7f9, #fff);
+            width: 100%;
+        }
+        .left-section, .right-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+        .input-group label {
+            font-weight: bold;
+        }
+        .input-group input[type="text"],
+        .input-group input[type="number"],
+        .input-group textarea,
+        .input-group select {
+            padding: 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .input-group input[readonly] {
+            background-color: #e9ecef;
+        }
+        .timeline-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #007bff;
+            z-index: -1;
+        }
+        .timeline {
+            width: 60%;
+            padding: 15px;
+            border: 1px solid #007bff;
+            border-radius: 25px;
+            text-align: center;
+            background-color: #f8f9fa;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        .timeline:hover {
+            background-color: #e9ecef;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -24px;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-color: #007bff;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px #f8f9fa;
+        }
+        .button-group {
+            display: flex;
+            gap: 20px;
+        }
+        .button-group .button {
+            padding: 15px 30px;
+            border-radius: 4px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button-group .yes-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .button-group .no-button {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="input-group">
+                <label for="receiving-account">Receiving Account</label>
+                <input type="text" id="receiving-account" />
+            </div>
+            <div class="input-group">
+                <label for="receiving-account-bank">Receiving Account Bank</label>
+                <input type="text" id="receiving-account-bank" />
+            </div>
+            <div class="input-group">
+                <label for="receiving-account-name">Receiving Account Name</label>
+                <input type="text" id="receiving-account-name" readonly />
+            </div>
+            <div class="input-group">
+                <label>Amount Deposited</label>
+            </div>
+            <div class="input-group">
+                <input type="number" id="amount-deposited" />
+            </div>
+            <div class="button-group">
+                <button class="button yes-button">Yes</button>
+                <button class="button no-button">No</button>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="right-section">
+            <div class="timeline-container">
+                <div class="timeline">Escrow Started</div>
+                <div class="timeline">Receipt Accepted Escrow Contract</div>
+                <div class="timeline">Funds Deposited</div>
+                <div class="timeline">Contract Started</div>
+                <div class="timeline">Contract Fulfilled</div>
+                <div class="timeline">Funds Release from Escrow</div>
+                <div class="timeline">Escrow Successful</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defining Escrow Page</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #d0e7f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .title {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .input-group input[type="text"], .input-group input[type="number"], .input-group textarea {
+            padding: 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .input-group select {
+            padding: 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .input-group button, .input-group .report-issue {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: center;
+        }
+        .input-group button:hover, .input-group .report-issue:hover {
+            background-color: #0056b3;
+        }
+        .grid-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Defining Escrow Page</div>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Email">
+        </div>
+        <div class="input-group">
+            <button id="search-user">Search User</button>
+        </div>
+        <div class="input-group">
+            <label for="rating">Rating</label>
+            <input type="text" id="rating" placeholder="Rating">
+        </div>
+        <div class="grid-row">
+            <div class="input-group">
+                <label for="contract-type">Contract Type</label>
+                <select id="contract-type">
+                    <option value="User">User</option>
+                    <option value="Non User">Non User</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="sender-receiver">Sender/Receiver</label>
+                <select id="sender-receiver">
+                    <option value="Sender">Sender</option>
+                    <option value="Receiver">Receiver</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="contract-requirements">Please Describe Contract Requirements</label>
+            <textarea id="contract-requirements" rows="5" placeholder="Please Describe Contract Requirements"></textarea>
+        </div>
+        <div class="input-group">
+            <label for="contract-amount">Exact Contract Amount</label>
+            <input type="number" id="contract-amount" placeholder="Exact Contract Amount">
+        </div>
+        <div class="input-group">
+            <button id="begin-escrow">Begin Escrow</button>
+        </div>
+        <div class="input-group">
+            <button class="report-issue">Report an Issue</button>
+        </div>
+    </div>
+</body>
+</html>

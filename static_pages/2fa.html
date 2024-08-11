@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2FA Setup</title>
+    <style>
+        body {
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            justify-items: center;
+            text-align: center;
+        }
+        .container h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            grid-column: 1 / -1;
+        }
+        .container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            grid-column: 1 / -1;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            grid-column: 1 / -1;
+        }
+        .container button:hover {
+            background-color: #45a049;
+        }
+        .container .2fa-options {
+            margin: 10px 0;
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            justify-items: start;
+            width: 100%;
+        }
+        .container label {
+            font-size: 16px;
+        }
+        .phone-number, .auth-app {
+            width: 100%;
+        }
+        .auth-app img {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Setup 2FA</h1>
+        <p>Choose your 2FA method:</p>
+        <div class="2fa-options">
+            <label>
+                <input type="radio" name="2fa-method" value="phone"> Phone Number
+            </label>
+            <label>
+                <input type="radio" name="2fa-method" value="app"> Authenticator App
+            </label>
+        </div>
+        <div class="phone-number" style="display:none;">
+            <input type="text" placeholder="Enter your phone number">
+        </div>
+        <div class="auth-app" style="display:none;">
+            <p>Scan the QR code with your authenticator app</p>
+            <img src="your-qr-code-url" alt="QR Code">
+        </div>
+        <button>Setup 2FA</button>
+    </div>
+    <script>
+        document.querySelectorAll('input[name="2fa-method"]').forEach((elem) => {
+            elem.addEventListener("change", function(event) {
+                var value = event.target.value;
+                if (value === "phone") {
+                    document.querySelector('.phone-number').style.display = 'block';
+                    document.querySelector('.auth-app').style.display = 'none';
+                } else if (value === "app") {
+                    document.querySelector('.phone-number').style.display = 'none';
+                    document.querySelector('.auth-app').style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+s

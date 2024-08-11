@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Type</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #d0e7f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+        }
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .option {
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .option:hover {
+            background-color: #f0f0f0;
+            border-color: #999;
+        }
+        .option.selected {
+            background-color: #ffb3b3;
+            border-color: #ff8080;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Term Definition</div>
+        <div class="options">
+            <div class="option" onclick="selectOption(this)">
+                Straight Escrow
+            </div>
+            <div class="option" onclick="selectOption(this)">
+                Milestone based Escrow
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // Remove the 'selected' class from all options
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => option.classList.remove('selected'));
+
+            // Add the 'selected' class to the clicked option
+            element.classList.add('selected');
+
+            // Check if the clicked option is 'Milestone based Escrow'
+            if (element.textContent.trim() === 'Milestone based Escrow') {
+                // Redirect to 'Templatepage.html' after a short delay
+                setTimeout(() => {
+                    window.location.href = 'Templatepage.html';
+                }, 500);
+            }
+        }
+    </script>
+</body>
+</html>

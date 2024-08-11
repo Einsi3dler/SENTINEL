@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debit Card Information</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #d0e7f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60%;
+            max-width: 400px;
+        }
+        .title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 1em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Debit Card Information</div>
+        <form>
+            <div class="form-group">
+                <label for="cardholderName">Cardholder Name</label>
+                <input type="text" id="cardholderName" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" placeholder="Enter your card number" required>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiration Date</label>
+                <input type="month" id="expiryDate" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="Enter CVV" required>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

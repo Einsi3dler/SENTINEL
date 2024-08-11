@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #d0e7f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 20px;
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header .profile-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .profile-buttons .button {
+            text-align: center;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .info-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .filter-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filter-section label {
+            margin-right: 10px;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .pagination .button {
+            text-align: center;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <div class="profile-buttons">
+                <a href="#" class="button">User Profile</a>
+                <a href="#" class="button">Logout</a>
+            </div>
+        </div>
+        <div class="info-section">
+            <div class="info-box">
+                <h2>Total Escrow Amount</h2>
+                <p>100</p>
+            </div>
+            <div class="info-box">
+                <h2>Total User Count</h2>
+                <p>10,000</p>
+            </div>
+            <div class="info-box">
+                <h2>User Rating</h2>
+                <p>4.5</p>
+            </div>
+        </div>
+        <div class="filter-section">
+            <h2>Filters</h2>
+            <label><input type="checkbox" name="filter" value="ID"> ID</label>
+            <label><input type="checkbox" name="filter" value="Amount"> Amount</label>
+            <label><input type="checkbox" name="filter" value="Username"> Username</label>
+            <label><input type="checkbox" name="filter" value="Status"> Status</label>
+            <label><input type="checkbox" name="filter" value="Rating"> Rating</label>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Amount</th>
+                        <th>Username</th>
+                        <th>Status</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="text-align: center;">No data available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <a href="#" class="button">Previous</a>
+            <a href="#" class="button">Next</a>
+        </div>
+    </div>
+</body>
+</html>
