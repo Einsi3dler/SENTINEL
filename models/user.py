@@ -7,7 +7,7 @@ from os import getenv
 import sqlalchemy
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
-from hashlib import md5
+from werkzeug.security import generate_password_hash
 
 
 class User(BaseModel, Base):
@@ -27,8 +27,8 @@ class User(BaseModel, Base):
         super().__init__(*args, **kwargs)
 
     def __setattr__(self, name, value):
-        """sets password encrypted with md5 encryption"""
+        """sets password encrypted with encryption"""
         if name == "password":
-            value = md5(value.encode()).hexdigest()
+            value = generate_password_hash(value)
         super().__setattr__(name, value)
 

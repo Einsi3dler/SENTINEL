@@ -1,0 +1,1 @@
+{"HBNB_MYSQL_USER":"sentinel_dev", "HBNB_MYSQL_PWD": "sentinel_dev_pwd", "HBNB_MYSQL_HOST": "localhost", "HBNB_MYSQL_DB" : "sentinel_prod_db" }

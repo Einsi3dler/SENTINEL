@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* css variable for my frequently used style */
+:root{
+    --main-blue: #1d0160;
+    --light-blue: #0000F5;
+    
+}
+p{
+    line-height: 26px;
+}
+/* Removing the default styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* navigation bar main container */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.landing_page-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 520;
+    width: 70%;
+    background-color: rgb(255, 252, 252);
+    position: fixed;
+    left: 15%;
+    padding: 10px 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    z-index: 100;
+}
+
+/* Navigation bar links */
+.landing_page-navbar ul {
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.landing_page-navbar li {
+    list-style: none;
+    margin: 3px;
+}
+
+.landing_page-navbar a {
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: 0.9s;
+    font-size: 0.8em;
+}
+
+.landing_page-navbar a:hover {
+    background-color: var(--main-blue);
+    color: white;
+}
+
+/* Navigation bar signUp and login */
+.landing_page-navbar .sign-up-links {
+    display: flex;
+    margin-left: 20px;
+}
+
+.landing_page-navbar .sign-up-links a {
+    border-radius: 9px;
+    border: 1px solid black;
+    padding: 10px 19px;
+}
+
+.blue a {
+    background-color: var(--main-blue);
+    color: white;
+    border: none;
+}
+
+.open-menu {
+    display: none;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .landing_page-navbar {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 884px) {
+    .landing_page-navbar ul {
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: -18rem;
+        background-color: rgb(255, 254, 254);
+        left: 0;
+        right: 0;
+        padding: 20px;
+        transition-duration: 1.2s;
+        z-index: -100;
+        opacity: 0;
+    }
+
+    .landing_page-navbar .show-menu-small-screen {
+        top: 80%;
+        opacity: 1;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .landing_page-navbar .sign-up-links {
+        margin-left: 0;
+        column-gap: 6vw;
+    }
+
+    .landing_page-navbar .open-menu {
+        display: flex;
+    }
+}
